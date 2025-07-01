@@ -1,0 +1,384 @@
+[
+  {
+    "title": "通用",
+    "icon": "fa-cog",
+    "labelWidth": "100px",
+    "content": [
+      {
+        "type": "uploader",
+        "label": "Logo图片",
+        "value": "",
+        "showImage": true,
+        "name": "logo_img",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "input",
+        "label": "页脚版权",
+        "value": "",
+        "placeholder": "©2020 PANDA Studio. All rights reserved.",
+        "name": "pf_footer_copyright",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "multitypes",
+        "label": "页脚链接",
+        "subLabel": "链接",
+        "subLabelWidth": "",
+        "displayAsTable": true,
+        "types": [
+          { "type": "uploader", "showImage": true, "name": "img", "label": "可选图片16*16" },
+          { "type": "input", "placeholder": "请输入...", "name": "text", "label": "文本" },
+          { "type": "input", "placeholder": "http://", "name": "href", "label": "链接" }
+        ],
+        "value": [],
+        "name": "pf_footer_links",
+        "gear_name": "",
+        "gear_value": ""
+      }
+    ]
+  },
+  {
+    "title": "首页",
+    "icon": "fa-desktop",
+    "labelWidth": "100px",
+    "content": [
+      {
+        "type": "radio",
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">滚动文章</span>",
+        "value": "",
+        "radios": [
+          { "label": "量化过滤文章", "value": "" },
+          { "label": "显示固定文章", "value": "fixed" }
+        ],
+        "name": "frontpage_slider_type",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "inputNumber",
+        "label": "最新量",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "frontpage_slider_newest",
+        "decoration": "",
+        "gear_name": "frontpage_slider_type",
+        "gear_value": ""
+      },
+      {
+        "type": "inputNumber",
+        "label": "点赞量",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "frontpage_slider_most_likes",
+        "decoration": "",
+        "gear_name": "frontpage_slider_type",
+        "gear_value": ""
+      },
+      {
+        "type": "inputNumber",
+        "label": "评论量",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "frontpage_slider_most_comments",
+        "decoration": "",
+        "gear_name": "frontpage_slider_type",
+        "gear_value": ""
+      },
+      {
+        "type": "inputNumber",
+        "label": "阅读量",
+        "value": 0,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "name": "frontpage_slider_most_views",
+        "decoration": "",
+        "gear_name": "frontpage_slider_type",
+        "gear_value": ""
+      },
+      {
+        "type": "multitypes",
+        "label": "",
+        "subLabel": "文章",
+        "subLabelWidth": "100px",
+        "displayAsTable": true,
+        "types": [{ "type": "singleSelect", "name": "post", "label": "指定文章" }],
+        "value": [],
+        "name": "frontpage_slider_fixed_posts",
+        "gear_name": "frontpage_slider_type",
+        "gear_value": "fixed",
+        "decoration": ""
+      },
+      {
+        "type": "multitypes",
+        "label": " <span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">卡片链接</span>",
+        "subLabel": "卡片",
+        "subLabelWidth": "",
+        "displayAsTable": true,
+        "types": [
+          { "type": "input", "placeholder": "请输入...", "name": "name", "label": "卡片标题" },
+          { "type": "input", "placeholder": "http://请输入链接地址...", "name": "href", "label": "链接地址" },
+          { "type": "uploader", "showImage": true, "name": "image", "label": "背景图片" }
+        ],
+        "value": [],
+        "name": "frontpage_categories",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "若不设置背景图片则随机显示预设图片"
+      },
+      {
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">展示模块</span>",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "value": ""
+      },
+      {
+        "type": "switch",
+        "label": "最新文章",
+        "value": "",
+        "name": "pf_frontpage_recent_articles_modal",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "筛选最新发布的前4篇文章"
+      },
+      {
+        "type": "switch",
+        "label": "大家喜欢",
+        "value": "",
+        "name": "pf_frontpage_most_likes_modal",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "从点赞数量最多的文章中筛选前4篇"
+      },
+      {
+        "type": "switch",
+        "label": "热门讨论",
+        "value": "",
+        "name": "pf_frontpage_most_comments_modal",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "从评论数量最多的文章中筛选前4篇"
+      },
+      {
+        "type": "switch",
+        "label": "阅读最多",
+        "value": "",
+        "name": "pf_frontpage_most_views_modal",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "从已读数量最多的文章中筛选前4篇"
+      },
+      {
+        "type": "multitypes",
+        "label": "指定分类",
+        "subLabel": "分类目录",
+        "subLabelWidth": "",
+        "displayAsTable": true,
+        "types": [
+          { "type": "categoriesSelect", "name": "cat", "label": "文章分类目录" },
+          { "type": "input", "placeholder": "可选，默认显示首个分类目录名", "name": "title", "label": "标题" }
+        ],
+        "value": [],
+        "name": "pf_frontpage_category_articles_modal",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "switch",
+        "label": "随机文章",
+        "value": "",
+        "name": "pf_frontpage_random_articles_modal",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "从文章中随机筛选20篇"
+      }
+    ],
+    "gear_name": "",
+    "gear_value": ""
+  },
+  {
+    "title": "评论与下载",
+    "icon": "fa-comments-o",
+    "labelWidth": "150px",
+    "content": [
+      {
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">提示语</span>",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "value": ""
+      },
+      {
+        "type": "input",
+        "label": "文章内容评论后可见",
+        "value": "",
+        "placeholder": "默认：此区域内容需评论后可见",
+        "name": "need_reply_tip",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "textarea",
+        "label": "下载按钮评论后可用",
+        "value": "",
+        "placeholder": "默认：请您认真评论后再下载！",
+        "name": "need_reply_download_tip",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "rows": 2
+      },
+      {
+        "type": "textarea",
+        "label": "下载按钮版权提示",
+        "value": "",
+        "placeholder": "默认：版权所有，未经授权严禁转载！",
+        "name": "download_copyright",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "rows": 2
+      }
+    ],
+    "gear_name": "",
+    "gear_value": ""
+  },
+  {
+    "title": "功能",
+    "icon": "fa-cubes",
+    "labelWidth": "130px",
+    "content": [
+      {
+        "type": "input",
+        "label": "边栏固定提示",
+        "value": "",
+        "placeholder": "如：边栏固定",
+        "name": "sidebar_fixed_switcher_tip",
+        "decoration": "",
+        "gear_name": "sidebar_fixed_switcher",
+        "gear_value": "checked"
+      },
+      {
+        "type": "multitypes",
+        "label": " <span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">顶部音乐播放器</span>",
+        "subLabel": "音乐",
+        "subLabelWidth": "100px",
+        "displayAsTable": true,
+        "types": [
+          { "type": "input", "placeholder": "请输入..", "name": "title", "label": "曲标题" },
+          { "type": "uploader", "showImage": false, "name": "url", "label": "地址" }
+        ],
+        "value": [],
+        "name": "pf_music_list",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">设计</span>",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "value": ""
+      },
+      {
+        "type": "switch",
+        "label": "默认显示顶栏",
+        "value": "",
+        "name": "topNav_always_stay",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "加载时顶栏总是反白显示"
+      },
+      {
+        "type": "switch",
+        "label": "顶栏粘滞",
+        "value": "",
+        "name": "topNav_is_sticky",
+        "gear_name": "",
+        "gear_value": "",
+        "decoration": "手机端永远粘滞，此设置仅对PC有效。启用后无论如何滚动，顶栏总是在顶部"
+      },
+      {
+        "type": "switch",
+        "label": "边栏分割线",
+        "value": "",
+        "name": "sidebar_separate_line",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">不刷新加载</span>",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "value": ""
+      },
+      {
+        "type": "switch",
+        "label": "启用不刷新加载",
+        "value": "",
+        "name": "pf_enable_pageLoader",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">打赏</span>",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "value": ""
+      },
+      {
+        "type": "input",
+        "label": "打赏标题",
+        "value": "",
+        "placeholder": "默认：打赏",
+        "name": "dashangTitle",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "textarea",
+        "label": "打赏描述",
+        "value": "",
+        "placeholder": "可留空",
+        "name": "dashangText",
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": "",
+        "rows": 2
+      },
+      {
+        "type": "multitypes",
+        "label": "打赏二维码",
+        "subLabel": "打赏方式",
+        "subLabelWidth": "",
+        "displayAsTable": true,
+        "types": [
+          { "type": "input", "placeholder": "请输入...", "name": "name", "label": "名称" },
+          { "type": "uploader", "showImage": true, "name": "qrcode", "label": "二维码" },
+          { "type": "input", "placeholder": "填写此处后，不再展示二维码，直接跳转", "name": "href", "label": "链接" }
+        ],
+        "value": [],
+        "name": "dashang_Imgs",
+        "gear_name": "",
+        "gear_value": ""
+      }
+    ]
+  }
+]

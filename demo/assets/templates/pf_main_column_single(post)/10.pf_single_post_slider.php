@@ -1,0 +1,7 @@
+<?php
+$post_id = get_the_ID();$el = pf_element()["createElement"];$posts = [[
+'title' => get_the_title($post_id),'thumbnail' => _thumbnail($post_id),'background' => get_post_meta($post_id,'日志头图',true) ?: '','type' => $el('div',['class'=>'post-type'],[
+$el("span",["class"=>"reads","data-toggle"=>"tooltip","title"=>_t8('已读')],[
+$el("i",["class"=>"pandastudio-icons-book-reader"]),$el("span",["class"=>"post_meta_number","data-number-type"=>"reads"],get_post_meta($post_id,'views',true) ?: (get_post_meta($post_id,'bigfa_ding',true) ?: 0))]),$el("span",["class"=>"likes","data-toggle"=>"tooltip","title"=>_t8('点赞')],[
+$el("i",["class"=>"pandastudio-icons-heart"]),$el("span",["class"=>"post_meta_number","data-number-type"=>"likes"],get_post_meta($post_id,'bigfa_ding',true) ?: 0)]),$el("span",["class"=>["comments","cursor-hand"],"data-toggle"=>"tooltip","title"=>_t8('评论'),"@click"=>"this.scroll2comment()"],[
+$el("i",["class"=>"pandastudio-icons-comment"]),$el("span",["class"=>"post_meta_number","data-number-type"=>"comments"],get_comments_number($post_id) )]),]),'categories' => "<i class='pandastudio-icons-category'></i>".pf_get_category_text($post_id,true)]];$posts = apply_filters('pf_the_single_slider',$posts);pf_get_slider($posts);

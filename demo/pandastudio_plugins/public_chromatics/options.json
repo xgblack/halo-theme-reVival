@@ -1,0 +1,259 @@
+[
+  {
+    "title": "颜色",
+    "icon": "fa-paint-brush",
+    "labelWidth": "100px",
+    "content": [
+      {
+        "type": "colorPicker",
+        "label": "主色调",
+        "value": "",
+        "name": "pf_theme_root_color_primary",
+        "showAlpha": false,
+        "decoration": "用于计算邻近色调、不同亮度的其他色调",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "基础白色",
+        "value": "",
+        "name": "pf_theme_root_color_white",
+        "showAlpha": false,
+        "decoration": "用于基础白背景、计算文本凹陷效果透明度",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度0",
+        "value": "",
+        "name": "pf_theme_root_color_gray_0",
+        "showAlpha": false,
+        "decoration": "灰度0~9用于文字颜色、边框、以及计算各种阴影",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度1",
+        "value": "",
+        "name": "pf_theme_root_color_gray_1",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度2",
+        "value": "",
+        "name": "pf_theme_root_color_gray_2",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度3",
+        "value": "",
+        "name": "pf_theme_root_color_gray_3",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度4",
+        "value": "",
+        "name": "pf_theme_root_color_gray_4",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度5",
+        "value": "",
+        "name": "pf_theme_root_color_gray_5",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度6",
+        "value": "",
+        "name": "pf_theme_root_color_gray_6",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度7",
+        "value": "",
+        "name": "pf_theme_root_color_gray_7",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度8",
+        "value": "",
+        "name": "pf_theme_root_color_gray_8",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "灰度9",
+        "value": "",
+        "name": "pf_theme_root_color_gray_9",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "switch",
+        "label": "启用夜间色调",
+        "value": "",
+        "name": "pf_enable_dark_color",
+        "gear_name": "",
+        "gear_value": ""
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间主色调",
+        "value": "",
+        "name": "pf_theme_root_dark_color_primary",
+        "showAlpha": false,
+        "decoration": "用于计算邻近色调、不同亮度的其他色调",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间基础白色",
+        "value": "",
+        "name": "pf_theme_root_dark_color_white",
+        "showAlpha": false,
+        "decoration": "用于基础白背景、计算文本凹陷效果透明度",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度0",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_0",
+        "showAlpha": false,
+        "decoration": "灰度0~9用于文字颜色、边框、以及计算各种阴影",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度1",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_1",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度2",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_2",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度3",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_3",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度4",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_4",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度5",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_5",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度6",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_6",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度7",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_7",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度8",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_8",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      },
+      {
+        "type": "colorPicker",
+        "label": "夜间灰度9",
+        "value": "",
+        "name": "pf_theme_root_dark_color_gray_9",
+        "showAlpha": false,
+        "decoration": "",
+        "gear_name": "pf_enable_dark_color",
+        "gear_value": "checked"
+      }
+    ],
+    "gear_name": "",
+    "gear_value": ""
+  }
+]

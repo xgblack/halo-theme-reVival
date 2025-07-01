@@ -1,0 +1,4 @@
+<?php
+global $wp_query;$posts = [];$current_tags = $wp_query->query_vars['tag'];$current_tags = explode(",",$current_tags);foreach (wp_list_pluck($wp_query->posts, "ID") as $post_id) {$post_tags = get_the_tags($post_id) ?: [];$tag_str = "";foreach ($post_tags as $cat) {if ($tag_str == "" && in_array($cat->slug, $current_tags)) {$tag_str = $cat->name;}}$posts[] = [
+'title' => get_the_title($post_id),'url' => get_permalink($post_id),'thumbnail' => _thumbnail($post_id),'background' => get_post_meta($post_id,'日志头图',true) ?: '','type' => '<i class="pandastudio-icons-tag"></i>'.$tag_str,//改成本tag名称
+'categories' => "<i class='pandastudio-icons-category'></i>".pf_get_category_text($post_id, true),];}$posts = apply_filters('pf_the_taxonomy_slider',$posts);pf_get_slider($posts);

@@ -1,0 +1,1 @@
+	</div><!-- #main --><footer><?php wp_footer(); ?></footer></div><!-- #wrapper --><div class="float-tools-container container"><div class="float-tools"><?php do_action("pf_float_tools"); ?></div></div></body></html>

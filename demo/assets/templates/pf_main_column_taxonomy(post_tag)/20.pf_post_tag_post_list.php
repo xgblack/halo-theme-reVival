@@ -1,0 +1,2 @@
+<?php
+global $wp_query;$post_ids = wp_list_pluck($wp_query->posts, "ID");$current_tags = $wp_query->query_vars['tag'];$current_tags = explode(",",$current_tags);$tag_slugs = [];foreach ($current_tags as $tag_slug) {$tag_slugs[] = $tag_slug;}$term = get_term_by('slug', $tag_slugs[0], 'post_tag');$tag_title = $term ? $term->name : '';?><div class="clearfix"><?php pf_the_modal_title($tag_title); ?><div class="row post-card-row"><?php do_action('pf_the_taxonomy_articles',$post_ids, $tag_title); ?></div></div>

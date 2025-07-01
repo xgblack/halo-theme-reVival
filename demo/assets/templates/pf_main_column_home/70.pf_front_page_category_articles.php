@@ -1,0 +1,4 @@
+<?php
+$category_data = _opt('pf_frontpage_category_articles_modal');if( $category_data ) {foreach ($category_data as $data) {$type_id = $data['cat'];$args = apply_filters('pf_frontpage_modal_query_args',[
+'post_type' => 'post','post_status' => 'publish','posts_per_page' => 4,'ignore_sticky_posts' => true,'cat' => $type_id,], $type_id);$query_posts = new WP_Query($args);$ids = apply_filters('pf_frontpage_modal_query_result_ids',wp_list_pluck($query_posts->posts, "ID"), $type_id);?><div class="clearfix"><?php pf_the_modal_title($data['title'], $type_id ); ?><div class="row post-card-row"><?php do_action('pf_the_frontpage_modal_articles',$ids, $type_id); ?></div></div><?php
+}}

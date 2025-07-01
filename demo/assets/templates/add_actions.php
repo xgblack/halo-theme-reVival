@@ -1,0 +1,3 @@
+<?php
+$_ = function() {global $pf_page_contents;$pf_page_contents = [];foreach (glob(__DIR__.'/pf_*') as $action_folder_path) {if (is_dir($action_folder_path)) {$action_folder_name = str_replace(__DIR__.'/','',$action_folder_path);foreach (glob($action_folder_path.'/*.php') as $file_path) {if (stripos($file_path,'[disabled]')) {/* 文件地址包含disabled的就跳过 */
+continue;}$file_name = str_replace($action_folder_path.'/','',$file_path);$name_arr = explode('.',$file_name,-1);$priority = (int)$name_arr[0];unset($name_arr[0]);$function_name = implode('.',$name_arr);if ($function_name && $priority) {$pf_page_contents[$function_name] = function()use($file_path) {include_once($file_path);};add_action($action_folder_name,$pf_page_contents[$function_name],$priority);}}}}};$_();

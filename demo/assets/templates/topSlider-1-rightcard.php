@@ -1,0 +1,8 @@
+<?php
+global $slider_posts;?><div class="cardFlip-outer"><div id="cardFlip" class="clearfix"><div class="background"><div class="default-background"><div class="head-img"><div class="img"></div></div></div><div class="card-background past"><div class="head-img"><div class="img"></div></div></div><!-- <div class="card-background current"><div class="head-img"><div class="img"></div></div></div> --><div class="canvas-wrapper"><div class="canvas"></div></div></div><div class="col-xs-11 col-xs-push-0_5 col-sm-6 col-sm-push-0_5 col-xl-7 meta-wrapper"><div class="meta is-disappearing"><div class="title"></div><div class="taxonomy"></div><?php
+if (isset($slider_posts[0]['url']) && $slider_posts[0]['url']) {echo '
+<a class="goto">
+'._t8('阅读全文').'
+<i class="pandastudio-icons-right"></i></a>
+';}?></div></div><div class="col-sm-5 col-sm-push-1 col-xl-push-0 slider-wrapper hidden-xs"><div pandaSlider class="cardFlip-slider" view="0"><div class="page" data-taxonomy="<?php echo $slider_posts[0]['categories']; ?>" data-headimg="<?php echo $slider_posts[0]['background']; ?>" disable-expand><div class="title"><div class="type"><?php echo $slider_posts[0]['type']; ?></div><!-- 一级标题 --><h1 class="post"><?php echo $slider_posts[0]['title']; ?></h1></div><a class="img" <?php
+if (isset($slider_posts[0]['url']) && $slider_posts[0]['url']) {echo 'href="'.$slider_posts[0]['url'].'"';}?> style="background-image:url(<?php echo $slider_posts[0]['thumbnail']; ?>)"></a></div></div></div></div></div>

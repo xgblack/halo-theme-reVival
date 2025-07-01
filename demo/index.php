@@ -1,0 +1,3 @@
+<?php
+get_header();?><div class="container"><div class="main-column"><?php
+if (is_home()) {$suffix = "_home";}elseif (is_404()) {$suffix = "_404";}elseif (is_search()) {$suffix = "_search";}elseif (is_page()) {$suffix = "_page(default)";}elseif (is_single()) {$posttype = get_post_type();$suffix = "_single({$posttype})";}elseif (is_archive()) {global $wp_query;$taxonomy = isset($wp_query->tax_query->queries[0]["taxonomy"]) ? $wp_query->tax_query->queries[0]["taxonomy"] : null;$taxonomy = $taxonomy ?: $wp_query->query_vars["post_type"];$suffix = "_taxonomy({$taxonomy})";}else {$suffix = "";}do_action("pf_main_column{$suffix}");?></div><?php get_sidebar(); ?></div><?php get_footer(); ?>

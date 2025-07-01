@@ -1,0 +1,2 @@
+<?php
+?><div class="search"><i class="pandastudio-icons-search"></i><form action=""><input id="pf_header_search" type="search" placeholder="<?php _et8('搜索您想要的...'); ?>" autocomplete="off"></form></div>

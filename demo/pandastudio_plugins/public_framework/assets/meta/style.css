@@ -1,0 +1,168 @@
+.meta_row + .meta_row {
+	margin-top: 10px;
+}
+.meta_row:before,
+.meta_row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.meta_uploader > div {
+	display: inline-block;
+	width: calc(100% - 54px);
+}
+.meta_uploader > button {
+	vertical-align: 0px !important;
+	margin-left: 3px;
+}
+.pf_label {
+	margin-bottom: 4px;
+}
+.pf_decoration {
+	font-size: 12px;
+	opacity: .7;
+}
+.pf_decoration:before,
+.pf_decoration:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.pf_multiple_uploader .img {
+	display: inline-block;
+	width: 56px;
+	height: 56px;
+	background-size: cover;
+	vertical-align: bottom;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	border-radius: 4px;
+	background-color: #e8eaf4;
+}
+.pf_multiple_uploader .img:before {
+	content: "\f335";
+	font-family: dashicons;
+	color: #fff;
+	background: rgba(255,0,0,.5);
+	font-size: 18px;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	display: block;
+	text-align: center;
+	border-radius: 4px;
+	opacity: 0;
+	cursor: pointer;
+	transition: .25s;
+}
+.pf_multiple_uploader .img:hover:before {
+	opacity: 1;
+	transition: .15s;
+}
+.pf_multiple_uploader .img_control {
+	display: inline-block;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 56px;
+	height: 56px;
+	vertical-align: bottom;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	border-radius: 4px;
+	background-color: #e8eaf4;
+}
+.pf_multiple_uploader .img_control:before {
+	content: "\f132";
+	font-family: dashicons;
+	font-size: 18px;
+	width: 56px;
+	height: 56px;
+	line-height: 60px;
+	display: block;
+	text-align: center;
+}
+.pf_multiple_uploader .img_control * {
+	cursor: pointer;
+	display: none;
+}
+.pf_multiple_uploader .img_control:hover:before {
+	display: none;
+}
+.pf_multiple_uploader .img_control:hover * {
+	display: inline-block;
+}
+.pf_multitypes_table {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin-bottom: 5px;
+}
+.pf_multitypes_table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.pf_multitypes_table table th,
+.pf_multitypes_table table td {
+	border: 1px solid #e2e4e7;
+	white-space: nowrap;
+	padding: 5px 7px;
+	font-weight: normal;
+	text-align: left;
+	overflow:hidden;
+}
+.pf_multitypes_table td.no_data {
+	text-align: center;
+}
+.pf_multitypes_table table .components-base-control__field,
+.pf_multitypes_table table .components-form-toggle {
+	margin: 0 !important;
+}
+.pf_multitypes_table table input[type=text],
+.pf_multitypes_table table textarea,
+.pf_multitypes_table table select {
+	min-width: 140px;
+}
+
+.pf_multitypes_table_label:before,
+.pf_multitypes_table_label:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.pf_multitypes_table_label .pf_label {
+	float: left;
+}
+.pf_multitypes_table_label .pf_expand {
+	float: right;
+	cursor: pointer;
+}
+.pf_multitypes .default_table {
+	transition: .25s;
+}
+.pf_multitypes .can_be_hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+.pf_multitypes_meta_uploader input {
+	min-width: 160px !important;
+}
+.pf_multitypes_meta_uploader > .components-base-control {
+	display: inline-block;
+}
+.pf_multitypes_meta_uploader > button {
+    vertical-align: 0px !important;
+    margin-left: 3px;
+}
+.pf_multitypes_table .components-radio-control__option {
+    display: inline-block;
+    margin: 0 6px 0 0 !important;
+}
+.pf_multitypes_table .components-radio-control__option input[type=radio] {
+	margin-right: 4px !important;
+}
+
+@media screen and (max-width: 781px) {
+	.pf_multitypes_table_label .pf_expand {
+		display: none;
+	}
+}

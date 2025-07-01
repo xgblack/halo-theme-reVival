@@ -1,0 +1,168 @@
+{
+  "components": {},
+  "meta": [
+    {
+      "title": "基本设置",
+      "icon": "el-icon-document",
+      "labelWidth": "75px",
+      "screen": ["page"],
+      "content": [
+        {
+          "type": "uploader",
+          "label": "页面头图 ",
+          "value": "",
+          "showImage": true,
+          "name": "日志头图",
+          "decoration": ""
+        }
+      ],
+      "gear_name": "",
+      "gear_value": ""
+    },
+    {
+      "title": "基本设置",
+      "icon": "el-icon-edit",
+      "labelWidth": "75px",
+      "screen": ["post"],
+      "content": [
+        {
+          "type": "uploader",
+          "label": "文章头图",
+          "value": "",
+          "showImage": true,
+          "name": "日志头图",
+          "decoration": "用于文章页面顶部图像以及首页滚动文章背景图，留空则默认使用特色图片模糊后显示<br>\n建议尺寸：1920×400px"
+        },
+        {
+          "type": "inputNumber",
+          "label": "点赞数量",
+          "value": 0,
+          "min": 0,
+          "max": 9999,
+          "step": 1,
+          "name": "bigfa_ding",
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        { "type": "switch", "label": "允许打赏", "value": "", "name": "打赏", "gear_name": "", "gear_value": "" }
+      ]
+    },
+    {
+      "title": "友情链接",
+      "icon": "el-icon-share",
+      "labelWidth": "90px",
+      "screen": ["favlinks"],
+      "content": [
+        {
+          "type": "input",
+          "label": "站点描述",
+          "value": "",
+          "placeholder": "请输入...",
+          "name": "site_description",
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        {
+          "type": "input",
+          "label": "站点地址",
+          "value": "",
+          "placeholder": "http://",
+          "name": "site_url",
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        {
+          "type": "switch",
+          "label": "新窗口打开",
+          "value": "",
+          "name": "target_blank",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        {
+          "type": "colorPicker",
+          "label": "主要颜色",
+          "value": "",
+          "name": "site_color",
+          "showAlpha": false,
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        {
+          "type": "uploader",
+          "label": "站点图标",
+          "value": "",
+          "showImage": true,
+          "name": "site_icon",
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": ""
+        },
+        {
+          "label": "<span class=\"form_decoration\" style=\"font-weight:bold;padding-left:10px;border-left:3px solid currentColor;\">帮助</span>",
+          "decoration": "",
+          "gear_name": "",
+          "gear_value": "",
+          "value": ""
+        },
+        {
+          "label": "显示",
+          "decoration": "在“页面”处新增页面，选择“友情链接”模板",
+          "gear_name": "",
+          "gear_value": "",
+          "value": ""
+        },
+        {
+          "label": "排序",
+          "decoration": "分类的顺序依照“别名”排序，修改别名可自定义顺序。链接的顺序依照“发布时间”排序。",
+          "gear_name": "",
+          "gear_value": "",
+          "value": ""
+        },
+        {
+          "label": "注意",
+          "decoration": "显示时候是按照分类显示的，因此每个链接必须隶属于一个分类才可以显示。不建议使用多级分类（父分类会出现重复项）",
+          "gear_name": "",
+          "gear_value": "",
+          "value": ""
+        }
+      ],
+      "gear_name": "",
+      "gear_value": ""
+    }
+  ],
+  "myPostTypes": {
+    "posttypes": [
+      {
+        "name": "友情链接",
+        "type": "favlinks",
+        "allow_categorys": true,
+        "supports": ["title", "editor"],
+        "menu_icon": "dashicons-admin-site",
+        "unset_columns": ["tags"],
+        "new_columns": [{ "name": "favlinks_taxonomy", "display": "友情链接分类" }],
+        "custom_taxonomies": [],
+        "show_in_rest": true
+      },
+      {
+        "name": "轻博客",
+        "type": "microblog",
+        "allow_categorys": false,
+        "supports": ["editor"],
+        "menu_icon": "dashicons-editor-quote",
+        "unset_columns": ["tags", "title"],
+        "new_columns": [{ "name": "microblog_content", "display": "轻博客内容" }],
+        "custom_taxonomies": [],
+        "show_in_rest": true
+      }
+    ],
+    "columns": [
+      { "name": "favlinks_taxonomy", "meta": "", "display": "taxonomy", "eval": "" },
+      { "name": "microblog_content", "meta": "", "display": "eval", "eval": "the_content();" }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "components": {},
+  "meta": [
+    {
+      "title": "基本设置",
+      "icon": "el-icon-picture",
+      "labelWidth": "75px",
+      "screen": ["gallery"],
+      "content": [
+        {
+          "type": "multi_uploader",
+          "label": "图片集",
+          "value": [],
+          "name": "gallery_images",
+          "decoration": "只有从WordPress媒体库上传的图片才可以创建“缩略图”。使用外链图片或关闭缩略图后，相册底部的小图显示为原图，可能导致页面加载缓慢卡顿"
+        }
+      ]
+    }
+  ],
+  "myPostTypes": {
+    "posttypes": [
+      {
+        "name": "相册",
+        "type": "gallery",
+        "allow_categorys": true,
+        "supports": ["title", "comments", "editor"],
+        "menu_icon": "dashicons-format-gallery",
+        "unset_columns": ["tags"],
+        "new_columns": [
+          {
+            "name": "gallery_taxonomy",
+            "display": "相册分类"
+          },
+          {
+            "name": "gallery_images",
+            "display": "图片集"
+          },
+          {
+            "name": "gallery_tags",
+            "display": "相册标签"
+          }
+        ],
+        "allow_tags": true,
+        "custom_taxonomies": [],
+        "show_in_rest": true
+      }
+    ],
+    "columns": [
+      {
+        "name": "gallery_images",
+        "meta": "gallery_images",
+        "display": "eval",
+        "eval": "echo '<div style=\"white-space:nowrap;overflow-x:auto;\">';\n$meta=json_decode($meta);\nif(is_array($meta)){}else{$meta=[];}\nforeach ($meta as $pic) {\necho '<div style=\"width:80px;height:80px;border-radius:4px;background:url('. $pic.') no-repeat center center / cover;display:inline-block;margin-right:5px\"></div>';\n}\necho '</div>';"
+      },
+      {
+        "name": "gallery_taxonomy",
+        "meta": "",
+        "display": "taxonomy",
+        "eval": ""
+      },
+      {
+        "name": "gallery_tags",
+        "meta": "",
+        "display": "tag",
+        "eval": ""
+      }
+    ]
+  }
+}

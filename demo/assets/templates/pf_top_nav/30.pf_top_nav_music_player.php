@@ -1,0 +1,3 @@
+<?php
+if (count(_opt('pf_music_list',array())) > 0) {?><div class="music-player-wrapper"><div class="mobile-button show-on-desktop" @click="this.music_toggle()" data-toggle="tooltip" title="<?php _et8("音乐"); ?>" data-placement="bottom"><i class="pandastudio-icons-headphone"></i></div><div class="player-main"><div class="player"><img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/frontend/theme_modules/static/music-icon.png" srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/frontend/theme_modules/static/music-icon@2x.png 2x,<?php echo get_stylesheet_directory_uri(); ?>/assets/frontend/theme_modules/static/music-icon@3x.png 3x"></div></div></div><?php
+}

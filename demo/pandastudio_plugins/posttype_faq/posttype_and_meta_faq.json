@@ -1,0 +1,32 @@
+{
+  "components": {},
+  "meta": [],
+  "myPostTypes": {
+    "posttypes": [
+      {
+        "name": "常见问题",
+        "type": "faq",
+        "allow_categorys": false,
+        "supports": ["title", "editor"],
+        "menu_icon": "dashicons-format-chat",
+        "unset_columns": ["tags"],
+        "new_columns": [
+          {
+            "name": "faq_answer",
+            "display": "问题答案"
+          }
+        ],
+        "custom_taxonomies": [],
+        "show_in_rest": true
+      }
+    ],
+    "columns": [
+      {
+        "name": "faq_answer",
+        "meta": "",
+        "display": "eval",
+        "eval": "the_content();"
+      }
+    ]
+  }
+}

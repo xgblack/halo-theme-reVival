@@ -1,0 +1,2 @@
+<?php
+global $is_production;$is_production = true;define( 'THEME_ROOT', dirname( __DIR__ ) . '/' );include_once(THEME_ROOT."assets/templates/add_actions.php");include_once("public_supports/index.php");include_once("public_functions/index.php");function pf_get_modules() {foreach (glob(__DIR__.'/*') as $module_path) {if (stripos($module_path,'[disabled]')) {continue;}$files = glob($module_path.'/index.php');if (is_array($files)) {foreach ($files as $file_path) {include_once($file_path);}}}}pf_get_modules();include_once("public_framework/config_framework.php");

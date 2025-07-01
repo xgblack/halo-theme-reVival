@@ -1,0 +1,61 @@
+/*评论选择框中表情尺寸*/
+#comment-face-popover>img{
+    width: 30px;
+    height: 30px;
+}
+/*评论内容表情尺寸*/
+.cmt_faces{
+    width: 35px;
+    height: 35px;
+}
+/*页面背景图片*/
+/*#wrapper {*/
+/*    background: url(https://file.blog.xgblack.cn/xgfile/background/left_bottom.png) no-repeat fixed bottom left,*/
+/*    url(https://file.blog.xgblack.cn/xgfile/background/right_up_yl.png) no-repeat fixed top right,*/
+/*    #f0f2f7*/
+/*}*/
+/*logo特效*/
+@keyframes nope {
+    0% {
+        transform: translateX(0);
+    }
+    6.5% {
+        transform: translateX(-7px) rotateY(-10deg);
+    }
+    18.5% {
+        transform: translateX(6px) rotateY(8deg);
+    }
+    31.5% {
+        transform: translateX(-4px) rotateY(-6deg);
+    }
+    43.5% {
+        transform: translateX(3px) rotateY(4deg);
+    }
+    50% {
+        transform: translateX(0);
+    }
+}
+.logo img,.logo a:hover{
+    animation-name: nope;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+/*给博客统计加阴影、四角变圆滑、背景变透明*/
+/*#wordpressrunninginfostat-2 section {*/
+/*    background: #D3DCE6;*/
+/*    background: -webkit-linear-gradient(bottom,rgba(255,255,255,.5),rgba(255,255,255,0) 10px) #D3DCE6;*/
+/*    background: linear-gradient(0deg,rgba(255,255,255,.5),rgba(255,255,255,0) 10px) #D3DCE6;*/
+/*    border-radius: 13px;*/
+/*    border: 1px solid #acbacc;*/
+/*    padding: 5px 15px;*/
+/*    -webkit-box-shadow: 0 0 0 1px rgba(255,255,255,.4) inset,0 13px 15px rgba(31,45,61,.15);*/
+/*    box-shadow: 0 0 0 1px rgba(255,255,255,.4) inset,0 13px 15px rgba(31,45,61,.15);*/
+/*    max-width: 100%;*/
+/*    -webkit-transition: .25s;*/
+/*    transition: .25s;*/
+/*}*/
+/*.list-group-item{*/
+/*    background-color:transparent;*/
+/*}*/
+/*html{filter:grayscale(100%)}*/

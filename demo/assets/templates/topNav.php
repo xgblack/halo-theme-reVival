@@ -1,0 +1,3 @@
+<header class="top-nav<?php echo _opt('topNav_always_stay') ? ' always-stay' : '';echo _opt('topNav_is_sticky') ? ' is-sticky' : ''; ?>"><div class="sidebar-btn" @click="this.toggle_mobile_sidebar()"><i class="pandastudio-icons-bread"></i><i class="pandastudio-icons-cross closeBtn"></i></div><div class="toolbox-btn" @click="this.toggle_mobile_toolbox()"><i class="pandastudio-icons-cog"></i></div><div class="container"><div class="logo"><?php
+$home_url = home_url();$logo_img = _opt('logo_img','');$default_logo = "
+<a class='default_logo' href='{$home_url}'><img src='{$logo_img}' /></a>";$default_logo = apply_filters('pf_custom_logo', $default_logo);echo $default_logo;?></div><div class="toolbox"><?php do_action('pf_top_nav'); ?></div></div></header>

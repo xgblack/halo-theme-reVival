@@ -1,0 +1,2 @@
+<aside class="sidebar-column<?php echo _opt('sidebar_separate_line') ? " with-separate-line" : ''; ?>"><div class="sidebar-content"><?php
+$sidebar_id = apply_filters("pf_get_sidebar_id","sidebar-others");dynamic_sidebar($sidebar_id);?></div></aside>

@@ -1,0 +1,2 @@
+<?php
+?><div class="color-switcher-wrapper"><div class="mobile-button show-on-desktop" @click="this.switch_day_night_color()" data-toggle="tooltip" title="<?php _et8("色彩模式"); ?>" data-placement="bottom"><i class="night-day"></i></div></div>
