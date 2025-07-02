@@ -1,0 +1,290 @@
+# Halo 主题开发规则 - reVival主题移植项目
+
+## 项目概述
+这是一个 Halo 主题开发项目，目标是将 WordPress 的 reVival 主题移植到 Halo CMS。
+- 当前基于 Ideaflow 主题进行修改
+- demo/ 目录包含原 WordPress reVival 主题代码，仅作参考，不要修改此目录
+- 如需使用 demo/ 中的代码，请复制到对应的目标目录
+
+## 开发前准备
+1. **必须先阅读 Halo 开发文档**：每次编写代码前都要充分阅读相关的 Halo 开发文档
+2. **理解 Halo 主题系统**：掌握 Halo 的模板引擎、路由系统、数据模型等核心概念
+3. **遵循现有项目结构**：严格按照 Halo 主题开发文档中的目录结构组织代码
+
+## Halo 主题开发核心规范
+
+### 1. 项目结构规范
+```
+halo-theme-reVival/
+├── theme.yaml              # 主题配置文件（必需）
+├── settings.yaml           # 主题设置选项定义
+├── templates/              # 模板文件目录
+│   ├── index.html         # 首页模板
+│   ├── post.html          # 文章详情模板
+│   ├── page.html          # 页面模板
+│   ├── archives.html      # 归档页模板
+│   ├── categories.html    # 分类列表模板
+│   ├── category.html      # 分类详情模板
+│   ├── tags.html          # 标签列表模板
+│   ├── tag.html           # 标签详情模板
+│   ├── error/             # 错误页面模板目录
+│   ├── modules/           # 模板片段目录
+│   └── assets/            # 模板静态资源
+├── src/                   # 前端源码目录
+│   ├── main.ts           # 主入口文件
+│   └── styles/           # 样式文件
+└── package.json          # 前端依赖配置
+```
+
+### 2. 主题配置文件 (theme.yaml) 规范
+- **必须包含的字段**：
+  - `apiVersion`: theme.halo.run/v1alpha1
+  - `kind`: Theme
+  - `metadata.name`: 必须与主题文件夹名称一致
+  - `spec.displayName`: 主题显示名称
+  - `spec.version`: 主题版本号
+  - `spec.requires`: Halo 最低版本要求
+
+### 3. 模板开发规范
+
+#### 3.1 模板引擎
+- 使用 **Thymeleaf** 模板引擎
+- 模板文件扩展名必须为 `.html`
+- 支持 Thymeleaf 标准语法和 Halo 自定义标签
+
+#### 3.2 模板路由映射
+```
+/ (首页) → index.html
+/posts/{slug} (文章详情) → post.html
+/pages/{slug} (页面详情) → page.html
+/archives (归档) → archives.html
+/categories (分类列表) → categories.html
+/categories/{slug} (分类详情) → category.html
+/tags (标签列表) → tags.html
+/tags/{slug} (标签详情) → tag.html
+/search (搜索) → search.html
+```
+
+#### 3.3 自定义模板
+- 在 `theme.yaml` 的 `customTemplates` 中定义
+- 支持自定义页面模板，如友情链接、图库等
+
+### 4. 数据模型和变量使用
+
+#### 4.1 全局变量
+- `site`: 站点信息
+- `theme`: 主题配置
+- `user`: 当前用户信息
+- `request`: 请求信息
+
+#### 4.2 页面特定变量
+- **首页 (index.html)**：`posts`, `categories`, `tags`
+- **文章页 (post.html)**：`post`, `prevPost`, `nextPost`
+- **页面 (page.html)**：`singlePage`
+- **分类页 (category.html)**：`category`, `posts`
+- **标签页 (tag.html)**：`tag`, `posts`
+
+#### 4.3 Halo 自定义标签
+```html
+<!-- 文章列表 -->
+<halo:postFinder size="10" page="1">
+  <!-- 文章列表内容 -->
+</halo:postFinder>
+
+<!-- 分类列表 -->
+<halo:categoryFinder>
+  <!-- 分类列表内容 -->
+</halo:categoryFinder>
+
+<!-- 标签云 -->
+<halo:tagFinder>
+  <!-- 标签列表内容 -->
+</halo:tagFinder>
+```
+
+### 5. 静态资源管理
+
+#### 5.1 资源引用规范
+```html
+<!-- CSS 文件引用 -->
+<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+<!-- JavaScript 文件引用 -->
+<script th:src="@{/assets/js/main.js}"></script>
+
+<!-- 图片资源引用 -->
+<img th:src="@{/assets/images/logo.png}" alt="Logo">
+```
+
+#### 5.2 构建工具配置
+- 使用 Vite 进行前端资源构建
+- 支持 TypeScript、Sass/SCSS
+- 集成 Tailwind CSS
+- 使用 `@halo-dev/theme-package-cli` 进行主题打包
+
+### 6. 主题设置选项 (settings.yaml)
+
+#### 6.1 设置选项定义规范
+```yaml
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-revival-setting
+spec:
+  forms:
+    - group: basic
+      label: 基本设置
+      formSchema:
+        - $formkit: text
+          name: siteTitle
+          label: 站点标题
+          help: 设置站点标题
+```
+
+#### 6.2 支持的表单组件类型
+- `text`: 文本输入
+- `textarea`: 多行文本
+- `select`: 下拉选择
+- `checkbox`: 复选框
+- `radio`: 单选框
+- `attachment`: 附件上传
+- `repeater`: 重复字段组
+
+### 7. 代码编写规范
+
+#### 7.1 HTML 模板规范
+- 使用语义化 HTML 标签
+- 遵循 Thymeleaf 语法规范
+- 模板片段化，提高复用性
+- 注释清晰，说明各个模块功能
+
+#### 7.2 CSS/SCSS 规范
+- 使用 BEM 命名规范或 Tailwind CSS
+- 响应式设计，支持多设备适配
+- 遵循现有项目的样式结构
+- 优化性能，避免重复样式
+
+#### 7.3 JavaScript/TypeScript 规范
+- 使用 TypeScript 编写
+- 使用 Alpine.js 进行轻量级交互
+- 模块化开发，避免全局污染
+- 代码压缩和优化
+
+### 8. WordPress 主题移植规范
+
+#### 8.1 移植策略
+1. **分析 WordPress 主题结构**：理解原主题的功能和布局
+2. **映射到 Halo 模板**：将 WordPress 模板文件映射到对应的 Halo 模板
+3. **数据模型转换**：将 WordPress 数据调用转换为 Halo 数据模型
+4. **功能适配**：根据 Halo 的能力调整或重新实现功能
+
+#### 8.2 WordPress 到 Halo 映射表
+```
+WordPress               →  Halo
+index.php              →  index.html
+single.php             →  post.html
+page.php               →  page.html
+archive.php            →  archives.html
+category.php           →  category.html
+tag.php                →  tag.html
+search.php             →  search.html
+404.php                →  error/404.html
+header.php             →  modules/header.html
+footer.php             →  modules/footer.html
+sidebar.php            →  modules/sidebar.html
+```
+
+#### 8.3 数据调用转换
+```php
+// WordPress
+<?php the_title(); ?>
+<?php the_content(); ?>
+<?php the_excerpt(); ?>
+```
+```html
+<!-- Halo -->
+<span th:text="${post.spec.title}"></span>
+<div th:utext="${post.status.content}"></div>
+<div th:utext="${post.status.excerpt}"></div>
+```
+
+### 9. 开发调试和测试
+
+#### 9.1 本地开发环境
+- 确保 Halo 开发环境正常运行
+- 设置 `spring.thymeleaf.cache=false` 以支持实时预览
+- 使用 `pnpm dev` 进行前端资源监听构建
+
+#### 9.2 测试规范
+- 测试各个页面模板的渲染
+- 验证响应式设计在不同设备上的表现
+- 检查主题设置选项的生效情况
+- 确保静态资源正确加载
+
+### 10. 版本管理和发布
+
+#### 10.1 版本号规范
+- 遵循语义化版本号 (Semantic Versioning)
+- 更新 `theme.yaml` 中的版本号
+- 记录变更日志
+
+#### 10.2 主题打包
+```bash
+# 构建和打包主题
+pnpm build
+
+# 仅构建前端资源
+pnpm build-only
+```
+
+## 特殊注意事项
+
+### 1. demo/ 目录处理规则
+- **禁止直接修改** demo/ 目录下的任何文件
+- demo/ 目录包含原 WordPress reVival 主题代码，仅供参考
+- 如需使用其中的代码，必须复制到对应的目标目录后再进行修改
+- 保持 demo/ 目录的完整性，便于对照和参考
+
+### 2. 现有项目适配
+- 当前项目基于 Ideaflow 主题，需要保持兼容性
+- 逐步替换和修改，避免破坏现有功能
+- 保留有用的设置选项和功能特性
+
+### 3. 性能优化
+- 使用 Halo 的缓存机制
+- 优化图片资源，支持 WebP 格式
+- 压缩 CSS 和 JavaScript 文件
+- 减少 HTTP 请求数量
+
+### 4. SEO 优化
+- 正确使用 HTML 语义化标签
+- 设置合适的 meta 标签
+- 支持结构化数据
+- 优化页面加载速度
+
+## 错误处理和调试
+
+### 1. 常见错误类型
+- 模板语法错误
+- 数据绑定错误
+- 静态资源路径错误
+- 主题配置错误
+
+### 2. 调试方法
+- 查看 Halo 控制台日志
+- 使用浏览器开发者工具
+- 验证模板语法正确性
+- 检查数据模型结构
+
+## 最佳实践
+
+1. **保持简洁**：避免过度复杂的模板逻辑
+2. **模块化设计**：将通用部分抽取为模板片段
+3. **响应式优先**：确保在各种设备上都有良好体验
+4. **性能优化**：关注页面加载速度和用户体验
+5. **文档完善**：为自定义功能编写清晰的文档
+6. **遵循标准**：严格按照 Halo 官方文档的规范开发
+
+---
+
+**重要提醒**：每次开发前请务必查阅最新的 Halo 官方文档，确保使用的是最新的 API 和最佳实践。 
