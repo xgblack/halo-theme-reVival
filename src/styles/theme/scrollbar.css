@@ -1,0 +1,23 @@
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  /*background-color: var(--scrollbar-track);*/
+  background-color: theme("colors.scrollbar.track");
+  border-radius: theme("borderRadius.lg");
+}
+
+::-webkit-scrollbar-thumb {
+  /*background-color: var(--scrollbar-thumb);*/
+  background-color: theme("colors.scrollbar.thumb");
+  border-radius: theme("borderRadius.lg");
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /*background-color: var(--scrollbar-thumb-hover);*/
+  background-color:  theme("colors.scrollbar.thumb-hover");
+}

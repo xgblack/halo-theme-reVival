@@ -1,7 +1,42 @@
+@import './theme/theme.css';
+@import './theme/scrollbar.css';
+@import './article/index.scss';
+
+/* 基础样式 */
 body {
-  background: #f2f2f2;
+  background: var(--base-100);
+  color: var(--text-base);
+  font-family: blog-font, sans-serif;
 }
 
-ul {
-  list-style: decimal;
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Alpine.js相关 */
+[x-cloak] {
+  display: none !important;
+}
+
+/* 字体相关 */
+@font-face {
+  font-family: blog-font;
+  src: url("./font/font.woff2");
 }
