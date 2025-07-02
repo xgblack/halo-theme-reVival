@@ -12,8 +12,8 @@ spec:
   homepage: https://github.com/Idea-flow/theme-Ideaflow
   repo: https://github.com/Idea-flow/theme-Ideaflow
   issues: https://github.com/Idea-flow/theme-Ideaflow/issues
-  settingName: "theme-Ideaflow-setting"
-  configMapName: "theme-Ideaflow-configMap"
+  settingName: "theme-reVival-setting"
+  configMapName: "theme-reVival-configMap"
   version: "1.1.5"
   requires: ">=2.0.0"
   license:
