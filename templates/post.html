@@ -16,12 +16,78 @@
 
       <!-- 文章内容区域 - 在手机端占满宽度，添加适当间距 -->
       <div class="flex w-full max-w-[1920px] flex-col md:w-[80%] lg:w-[70%]">
-        <div>
-          <article id="articleContentId" class="article-content text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
-            <th:block th:utext="${post.content.content}"></th:block>
+        <!-- 应用 reVival 主题的 post-wrapper 结构 -->
+        <div class="post-wrapper">
+          <!-- post-meta-before-content: 文章前置meta信息 -->
+          <div class="post-meta-before-content">
+            <div class="clearfix">
+              <div class="left">
+                <!-- 左侧meta信息：发布时间、分类等 -->
+                <span class="time">
+                  <i class="pandastudio-icons-clock"></i>
+                  <span class="date" th:text="${#dates.format(post.spec.publishTime, 'yyyy-MM-dd')}"></span>
+                </span>
+              </div>
+              <div class="right">
+                <!-- 右侧meta信息：标签等 -->
+                <span class="tags" th:if="${post.tags != null and #lists.size(post.tags) > 0}">
+                  <i class="pandastudio-icons-tag"></i>
+                  <th:block th:each="tag, tagStat : ${post.tags}">
+                    <span th:text="${tag.spec.displayName}"></span>
+                    <span th:if="!${tagStat.last}"> · </span>
+                  </th:block>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- post-content: 文章主体内容 -->
+          <article class="post-content">
+            <div id="articleContentId" class="article-content text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+              <th:block th:utext="${post.content.content}"></th:block>
+            </div>
           </article>
+
+          <!-- post-meta-after-content: 文章后置meta信息 -->
+          <div class="post-meta-after-content">
+            <div class="share-wrapper-section">
+              <div class="share">
+                <div class="content">
+                  <!-- 点赞功能 -->
+                  <span title="点赞" data-toggle="tooltip" class="likes cursor-hand" onclick="likePost()">
+                    <i class="pandastudio-icons-heart"></i>
+                    <span class="post_meta_number" data-number-type="likes">0</span>
+                  </span>
+
+                  <!-- 分享功能 -->
+                  <span data-title="分享" data-toggle="tooltip" class="social cursor-hand" role="button" tabindex="0">
+                    <i class="pandastudio-icons-share"></i>
+                  </span>
+
+                  <!-- 分享选项弹窗 -->
+                  <div class="hidden">
+                    <div id="post-share-popover">
+                      <a class="share-icon-weibo" onclick="shareToWeibo()">
+                        <i class="pandastudio-icons-weibo"></i>
+                      </a>
+                      <a class="share-icon-weixin" onclick="shareToWeixin()">
+                        <i class="pandastudio-icons-wx"></i>
+                      </a>
+                      <a class="share-icon-qzone" onclick="shareToQzone()">
+                        <i class="pandastudio-icons-qzone"></i>
+                      </a>
+                      <a class="share-icon-qq" onclick="shareToQQ()">
+                        <i class="pandastudio-icons-qq"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- 评论区域 -->
         <halo:comment group="content.halo.run" kind="Post" th:attr="name=${post.metadata.name}" />
       </div>
 

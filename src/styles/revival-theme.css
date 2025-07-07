@@ -1,0 +1,276 @@
+/* reVival 主题移植样式 */
+
+/* pandastudio-icons 图标字体定义 */
+@font-face {
+  font-family: 'pandastudio-icons';
+  src: url('../assets/theme_modules/pandaIcons/pandastudio-icons.eot?62633');
+  src: url('../assets/theme_modules/pandaIcons/pandastudio-icons.eot?62633#iefix') format('embedded-opentype'),
+       url('../assets/theme_modules/pandaIcons/pandastudio-icons.ttf?62633') format('truetype'),
+       url('../assets/theme_modules/pandaIcons/pandastudio-icons.woff?62633') format('woff'),
+       url('../assets/theme_modules/pandaIcons/pandastudio-icons.svg?62633#pandastudio-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* 图标基础类 */
+[class^="pandastudio-icons-"], [class*=" pandastudio-icons-"] {
+  /* 使用 !important 确保图标字体生效 */
+  font-family: 'pandastudio-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* 更好的字体渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 常用图标定义 */
+.pandastudio-icons-clock:before { content: "\e900"; }
+.pandastudio-icons-tag:before { content: "\e901"; }
+.pandastudio-icons-heart:before { content: "\e902"; }
+.pandastudio-icons-heart-o:before { content: "\e903"; }
+.pandastudio-icons-share:before { content: "\e904"; }
+.pandastudio-icons-weibo:before { content: "\e905"; }
+.pandastudio-icons-wx:before { content: "\e906"; }
+.pandastudio-icons-qzone:before { content: "\e907"; }
+.pandastudio-icons-qq:before { content: "\e908"; }
+.pandastudio-icons-category:before { content: "\e909"; }
+.pandastudio-icons-comment:before { content: "\e90a"; }
+.pandastudio-icons-book-reader:before { content: "\e90b"; }
+
+/* 主要布局样式 */
+
+/* post-wrapper 主容器样式 */
+.post-wrapper {
+  background: #fff;
+  background: var(--white_default, #fff);
+  padding: 30px 40px 15px;
+  margin: -40px 10px 15px;
+  box-shadow: 0 10px 13px rgba(31,45,61,.1), 0 0 1px rgba(31,45,61,.1);
+  box-shadow: 0 10px 13px var(--gray_opacity_1, rgba(31,45,61,.1)), 0 0 1px var(--gray_opacity_1, rgba(31,45,61,.1));
+  font-size: 16px;
+  border-radius: 0 0 10px 10px;
+  color: #738192;
+  color: var(--gray_3, #738192);
+  position: relative;
+  z-index: 2;
+}
+
+/* post-meta-before-content 前置meta样式 */
+.post-wrapper .post-meta-before-content {
+  margin-bottom: 15px;
+}
+
+.post-wrapper .post-meta-before-content .clearfix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-wrapper .post-meta-before-content .left {
+  float: left;
+}
+
+.post-wrapper .post-meta-before-content .right {
+  text-align: right;
+  float: right;
+}
+
+.post-wrapper .post-meta-before-content .time,
+.post-wrapper .post-meta-before-content .tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #8a95a5;
+}
+
+.post-wrapper .post-meta-before-content .time i,
+.post-wrapper .post-meta-before-content .tags i {
+  font-size: 14px;
+}
+
+/* post-content 文章内容样式 */
+.post-wrapper .post-content {
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* post-meta-after-content 后置meta样式 */
+.post-wrapper .post-meta-after-content {
+  border-top: 1px solid #e8ecf0;
+  padding-top: 15px;
+}
+
+.post-wrapper .post-meta-after-content .share-wrapper-section {
+  display: flex;
+  justify-content: center;
+}
+
+.post-wrapper .post-meta-after-content .share .content {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* 分享按钮样式 */
+.post-wrapper .post-meta-after-content .likes,
+.post-wrapper .post-meta-after-content .social {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.post-wrapper .post-meta-after-content .likes:hover,
+.post-wrapper .post-meta-after-content .social:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.post-wrapper .post-meta-after-content .likes i,
+.post-wrapper .post-meta-after-content .social i {
+  font-size: 16px;
+}
+
+/* 分享选项弹窗样式 */
+#post-share-popover {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.share-icon-weibo,
+.share-icon-weixin,
+.share-icon-qzone,
+.share-icon-qq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.share-icon-weibo {
+  background: #e6162d;
+}
+
+.share-icon-weixin {
+  background: #1aad19;
+}
+
+.share-icon-qzone {
+  background: #fec90c;
+}
+
+.share-icon-qq {
+  background: #12b7f5;
+}
+
+.share-icon-weibo:hover,
+.share-icon-weixin:hover,
+.share-icon-qzone:hover,
+.share-icon-qq:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .post-wrapper {
+    padding: 20px 25px 15px;
+    margin: -30px 5px 15px;
+  }
+  
+  .post-wrapper .post-meta-before-content .clearfix {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .post-wrapper .post-meta-before-content .left,
+  .post-wrapper .post-meta-before-content .right {
+    float: none;
+    text-align: left;
+  }
+  
+  .post-wrapper .post-meta-after-content .share .content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #post-share-popover {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-wrapper {
+    padding: 15px 20px 10px;
+    margin: -20px 3px 10px;
+  }
+  
+  .post-wrapper .post-meta-after-content .likes,
+  .post-wrapper .post-meta-after-content .social {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .share-icon-weibo,
+  .share-icon-weixin,
+  .share-icon-qzone,
+  .share-icon-qq {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+/* 工具类 */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cursor-hand {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .post-wrapper {
+    background: #1a1a1a;
+    color: #e5e5e5;
+  }
+  
+  .post-wrapper .post-meta-after-content {
+    border-top-color: #333;
+  }
+  
+  .post-wrapper .post-meta-before-content .time,
+  .post-wrapper .post-meta-before-content .tags {
+    color: #b0b0b0;
+  }
+} 
